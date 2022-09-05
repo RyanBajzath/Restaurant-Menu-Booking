@@ -15,7 +15,7 @@ app
   .use(express.json())
   //endpoints
   .get(`/menu`, getAllMenueOptions)
-  .get(`/menue/:theme`, getMenueByTheme)
+  .get(`/menu/:theme`, getMenueByTheme)
   .post(`/menu`, createTheme)
   .post(`/appointments`, createAppointment)
 

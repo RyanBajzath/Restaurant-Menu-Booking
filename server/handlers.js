@@ -30,10 +30,12 @@ const getAllMenueOptions = async (req, res) => {
 //Get Menu items by theme :param (READ)
 const getMenueByTheme = async (req, res) => {
   //assign variable to req.params. This is whats sent from the Front-End.
-  const theme = req.param.theme;
+  const theme = req.params.theme;
+  console.log(theme);
   try {
     //connect collection and perfrom mongoDB mothod
-    const result = await db.collection("menu").findOne({ theme }).toArray();
+    const result = await db.collection("menu").findOne({ theme: theme });
+
     result
       ? res.status(200).json({ status: 200, data: result })
       : res.status(404).json({ status: 404, data: result });
@@ -60,4 +62,5 @@ module.exports = {
   getAllMenueOptions,
   getMenueByTheme,
   createAppointment,
+  createTheme,
 };
