@@ -54,6 +54,36 @@ const createTheme = async (req, res) => {
   }
 };
 
+//update theme by theme (PATCH)
+const updateTheme = async (req, res) => {
+  const theme = req.body.theme;
+  const query = { theme: theme };
+  const newValue = { $set: { ...req.body } };
+  try {
+    const result = await db.collection("menu").updateOne(query, newValue);
+    result.modifiedCount
+      ? res
+          .status(200)
+          .json({ status: 200, data: result, message: `${theme} updated` })
+      : res.status(404).json({ status: 404, data: "Nothing changed" });
+  } catch (err) {
+    res.status(500).json({ status: 500, data: err });
+  }
+};
+
+//delete theme by theme (Delete)
+const deleteTheme = async (req, res) => {
+  const theme = req.body.theme;
+  try {
+    const result = await db.collection("menu").deleteOne({ theme });
+    result.deletedCount
+      ? res.status(204).json({ status: 204, theme, data: null })
+      : res.status(404).json({ status: 404, data: "Theme not found " });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // create Appointment
 const createAppointment = async (req, res) => {};
 
@@ -63,4 +93,7 @@ module.exports = {
   getMenueByTheme,
   createAppointment,
   createTheme,
+  updateTheme,
+  createAppointment,
+  deleteTheme,
 };

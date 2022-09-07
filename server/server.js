@@ -9,19 +9,23 @@ const {
   getMenueByTheme,
   createAppointment,
   createTheme,
+  updateTheme,
+  deleteTheme,
 } = require(`./handlers`);
 
-app
-  .use(express.json())
-  //endpoints
-  .get(`/menu`, getAllMenueOptions)
-  .get(`/menu/:theme`, getMenueByTheme)
-  .post(`/menu`, createTheme)
-  .post(`/appointments`, createAppointment)
+// app
+app.use(express.json());
+//endpoints
+app.get(`/menu`, getAllMenueOptions);
+app.get(`/menu/:theme`, getMenueByTheme);
+app.post(`/menu`, createTheme);
+app.patch(`/menu/:theme`, updateTheme);
+app.post(`/appointments`, createAppointment);
+app.delete(`/menu/:theme`, deleteTheme);
 
-  .listen(port, () => {
-    console.log(`listening on port ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
 
 //Database shape can look like this;
 //Collection called menu, inside the menu collection there can be theme objects.
@@ -30,11 +34,16 @@ app
 /*
 
 menu collection
-[
-  themeName1:[themeItem1, themeItem2,themeItem3]
-  themeName2:[themeItem1, themeItem2,themeItem3]
-  themeName3:[themeItem1, themeItem2,themeItem3]
-]
+{
+  theme: drinks
+  themeList:[drink1,drink2,drink3]
+},
+{
+  theme:food
+  themeList:[food1, food2, food3]},
+{
+  theme:dessert
+  themeList:[dessert1, dessert2, dessert3]}
 
 
 */
