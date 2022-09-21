@@ -20,9 +20,9 @@ app.get(`/menu`, getAllMenueOptions);
 app.get(`/menu/:theme`, getMenueByTheme);
 app.post(`/menu`, createTheme);
 app.patch(`/menu/:theme`, updateTheme);
-app.post(`/appointments`, createAppointment);
 app.delete(`/menu/:theme`, deleteTheme);
 
+app.post(`/appointments`, createAppointment);
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
