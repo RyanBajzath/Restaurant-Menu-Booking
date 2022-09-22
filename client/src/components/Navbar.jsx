@@ -1,60 +1,50 @@
+//importing from React
 import React from "react";
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
+
+//Importing styling compoents and Icons
 import styled from "styled-components";
 import { BiCake } from "react-icons/bi";
 import { MdLocalDrink } from "react-icons/md";
 import { FaHamburger } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
-import { home } from "react-icons-kit/icomoon";
 
+//Nav Bar is made with Phone screens in mind. The user will know which tab they have active as it will change color and scale when activating.
 const NavbAr = () => {
   return (
     <NavBarDiv>
-      <nav>
-        <IconList>
-          <IconItem>
-            <NavLink
-              to="/"
-              style={(isActive) => ({
-                color: isActive ? "green" : "blue",
-              })}
-            >
-              <StyledAiFillHome size="6vh" />
-            </NavLink>
-          </IconItem>
-
-          <IconItem>
-            <NavLink
-              to="/desserts"
-              style={(isActive) => ({
-                color: isActive ? "green" : "blue",
-              })}
-            >
-              <StyledBiCake size="6vh" />
-            </NavLink>
-          </IconItem>
-          <IconItem>
-            <NavLink
-              to="/drinks"
-              style={(isActive) => ({
-                color: isActive ? "green" : "blue",
-              })}
-            >
-              <StyledMdLocalDrink size="6vh" />
-            </NavLink>
-          </IconItem>
-          <IconItem>
-            <NavLink
-              to="/food"
-              style={(isActive) => ({
-                color: isActive ? "green" : "blue",
-              })}
-            >
-              <StyledFaHamburger size="6vh" />
-            </NavLink>
-          </IconItem>
-        </IconList>
-      </nav>
+      <NavLink
+        to="/"
+        style={({ isActive }) => {
+          return isActive ? { color: "Gray" } : { color: "black" };
+        }}
+      >
+        <StyledAiFillHome size="6vh" />
+      </NavLink>
+      <NavLink
+        to="/desserts"
+        style={({ isActive }) => {
+          return isActive ? { color: "Gray" } : { color: "black" };
+        }}
+      >
+        <StyledBiCake size="6vh" />
+      </NavLink>
+      <NavLink
+        to="/drinks"
+        style={({ isActive }) => {
+          return isActive ? { color: "Gray" } : { color: "black" };
+        }}
+      >
+        <StyledMdLocalDrink size="6vh" />
+      </NavLink>
+      <NavLink
+        to="/food"
+        style={({ isActive }) => {
+          return isActive ? { color: "Gray" } : { color: "black" };
+        }}
+      >
+        <StyledFaHamburger size="6vh" />
+      </NavLink>
     </NavBarDiv>
   );
 };
@@ -63,38 +53,46 @@ const NavBarDiv = styled.div`
   /* height: 10vh; */
   background: #ffffe0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const IconList = styled.ul`
-  display: flex;
-  gap: 1vw;
   justify-content: center;
-  align-items: center;
+  gap: 10vw;
+  outline: #4e534e47 solid 1px;
 `;
 
-const IconItem = styled.li`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+//Copy pasting is used here, can refactor this to a single component perhaps.
+const StyledAiFillHome = styled(AiFillHome)`
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1.25);
+  }
 `;
 
-// const StyledNavLink = styled(NavLink)`
-//   /* color: black; */
-//   &:hover {
-//     color: red;
-//   }
-//   &:active {
-//     transform: scale(5);
-//   }
-// `;
+const StyledBiCake = styled(BiCake)`
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1.25);
+  }
+`;
 
-const StyledAiFillHome = styled(AiFillHome)``;
+const StyledMdLocalDrink = styled(MdLocalDrink)`
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1.25);
+  }
+`;
 
-const StyledBiCake = styled(BiCake)``;
-
-const StyledMdLocalDrink = styled(MdLocalDrink)``;
-
-const StyledFaHamburger = styled(FaHamburger)``;
+const StyledFaHamburger = styled(FaHamburger)`
+  &:hover {
+    transform: scale(1.03);
+  }
+  &:active {
+    transform: scale(1.25);
+  }
+`;
 
 export default NavbAr;
