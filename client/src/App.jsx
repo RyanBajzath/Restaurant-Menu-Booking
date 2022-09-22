@@ -10,17 +10,15 @@ import DrinkPage from "./pages/DrinkPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/appointments" element={<AppointmentPage />} />
-          <Route path="/food" element={<FoodPage />} />
-          <Route path="/desserts" element={<DessertPage />} />
-          <Route path="/drinks" element={<DrinkPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/appointments" element={<AppointmentPage />} />
+        <Route path="/food" element={<FoodPage />} />
+        <Route path="/desserts" element={<DessertPage />} />
+        <Route path="/drinks" element={<DrinkPage />} />
+      </Routes>
     </>
   );
 }
