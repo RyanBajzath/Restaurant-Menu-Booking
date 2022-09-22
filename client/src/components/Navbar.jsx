@@ -1,10 +1,11 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BiCake } from "react-icons/bi";
 import { MdLocalDrink } from "react-icons/md";
 import { FaHamburger } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
+import { home } from "react-icons-kit/icomoon";
 
 const NavbAr = () => {
   return (
@@ -12,24 +13,45 @@ const NavbAr = () => {
       <nav>
         <IconList>
           <IconItem>
-            <Link to="/">
-              <AiFillHome size="6vh" />
-            </Link>
+            <NavLink
+              to="/"
+              style={(isActive) => ({
+                color: isActive ? "green" : "blue",
+              })}
+            >
+              <StyledAiFillHome size="6vh" />
+            </NavLink>
+          </IconItem>
+
+          <IconItem>
+            <NavLink
+              to="/desserts"
+              style={(isActive) => ({
+                color: isActive ? "green" : "blue",
+              })}
+            >
+              <StyledBiCake size="6vh" />
+            </NavLink>
           </IconItem>
           <IconItem>
-            <Link to="/desserts">
-              <BiCake size="6vh" />
-            </Link>
+            <NavLink
+              to="/drinks"
+              style={(isActive) => ({
+                color: isActive ? "green" : "blue",
+              })}
+            >
+              <StyledMdLocalDrink size="6vh" />
+            </NavLink>
           </IconItem>
           <IconItem>
-            <Link to="/drinks">
-              <MdLocalDrink size="6vh" />
-            </Link>
-          </IconItem>
-          <IconItem>
-            <Link to="/food">
-              <FaHamburger size="6vh" />
-            </Link>
+            <NavLink
+              to="/food"
+              style={(isActive) => ({
+                color: isActive ? "green" : "blue",
+              })}
+            >
+              <StyledFaHamburger size="6vh" />
+            </NavLink>
           </IconItem>
         </IconList>
       </nav>
@@ -55,7 +77,24 @@ const IconItem = styled.li`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  color: red;
 `;
+
+// const StyledNavLink = styled(NavLink)`
+//   /* color: black; */
+//   &:hover {
+//     color: red;
+//   }
+//   &:active {
+//     transform: scale(5);
+//   }
+// `;
+
+const StyledAiFillHome = styled(AiFillHome)``;
+
+const StyledBiCake = styled(BiCake)``;
+
+const StyledMdLocalDrink = styled(MdLocalDrink)``;
+
+const StyledFaHamburger = styled(FaHamburger)``;
 
 export default NavbAr;
