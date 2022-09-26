@@ -19,7 +19,7 @@ const NavbAr = () => {
           return isActive ? { color: "Gray" } : { color: "black" };
         }}
       >
-        <StyledAiFillHome size="6vh" />
+        <StyledAiFillHome size="5vh" />
       </NavLink>
       <NavLink
         to="/desserts"
@@ -27,7 +27,7 @@ const NavbAr = () => {
           return isActive ? { color: "Gray" } : { color: "black" };
         }}
       >
-        <StyledBiCake size="6vh" />
+        <StyledBiCake size="5vh" />
       </NavLink>
       <NavLink
         to="/drinks"
@@ -35,7 +35,7 @@ const NavbAr = () => {
           return isActive ? { color: "Gray" } : { color: "black" };
         }}
       >
-        <StyledMdLocalDrink size="6vh" />
+        <StyledMdLocalDrink size="5vh" />
       </NavLink>
       <NavLink
         to="/food"
@@ -43,7 +43,7 @@ const NavbAr = () => {
           return isActive ? { color: "Gray" } : { color: "black" };
         }}
       >
-        <StyledFaHamburger size="6vh" />
+        <StyledFaHamburger size="5vh" />
       </NavLink>
     </NavBarDiv>
   );
@@ -60,6 +60,7 @@ const NavBarDiv = styled.div`
 
 //Copy pasting is used here, can refactor this to a single component perhaps.
 const StyledAiFillHome = styled(AiFillHome)`
+  padding: 0.25vh;
   &:hover {
     transform: scale(1.03);
   }
@@ -69,6 +70,7 @@ const StyledAiFillHome = styled(AiFillHome)`
 `;
 
 const StyledBiCake = styled(BiCake)`
+  padding: 0.25vh;
   &:hover {
     transform: scale(1.03);
   }
@@ -78,6 +80,7 @@ const StyledBiCake = styled(BiCake)`
 `;
 
 const StyledMdLocalDrink = styled(MdLocalDrink)`
+  padding: 0.25vh;
   &:hover {
     transform: scale(1.03);
   }
@@ -87,6 +90,7 @@ const StyledMdLocalDrink = styled(MdLocalDrink)`
 `;
 
 const StyledFaHamburger = styled(FaHamburger)`
+  padding: 0.25vh;
   &:hover {
     transform: scale(1.03);
   }

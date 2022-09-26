@@ -31,7 +31,6 @@ const getAllMenueOptions = async (req, res) => {
 const getMenueByTheme = async (req, res) => {
   //assign variable to req.params. This is whats sent from the Front-End.
   const theme = req.params.theme;
-  console.log(theme);
   try {
     //connect collection and perfrom mongoDB mothod
     const result = await db.collection("menu").findOne({ theme: theme });
