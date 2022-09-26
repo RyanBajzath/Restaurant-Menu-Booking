@@ -3,6 +3,10 @@ const { ConnectionCheckOutFailedEvent } = require("mongodb");
 const app = express();
 port = process.env.PORT | 8000;
 
+const cors = require("cors");
+
+app.use(cors());
+
 //import logic from handlers.js
 const {
   getAllMenueOptions,
@@ -17,7 +21,7 @@ const {
 app.use(express.json());
 //endpoints
 app.get(`/menu`, getAllMenueOptions);
-app.get(`/menu/:theme`, getMenueByTheme);
+app.get(`/foodMenu/:theme`, getMenueByTheme);
 app.post(`/menu`, createTheme);
 app.patch(`/menu/:theme`, updateTheme);
 app.delete(`/menu/:theme`, deleteTheme);
