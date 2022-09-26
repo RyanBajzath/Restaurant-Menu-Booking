@@ -21,7 +21,7 @@ const FoodPage = () => {
   return (
     <>
       <FoodPageDiv>
-        <StyledTitle>FoodPage</StyledTitle>
+        <StyledTitle>Food Page</StyledTitle>
 
         {foodData.map((foodItem) => {
           return (
