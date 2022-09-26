@@ -44,6 +44,7 @@ const StyledTitle = styled.h1`
   color: #ff7f507b;
   -webkit-text-stroke-width: 1.2px;
   -webkit-text-stroke-color: coral;
+  border-bottom: grey solid 1px;
 `;
 
 const FoodPageDiv = styled.div`
