@@ -8,6 +8,11 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    outDir: '../server/public'
+    outDir: '../server/public',
+    rollupOptions: {
+      external: [
+        /^node:.*/,
+      ]
+    }
   }
 });
