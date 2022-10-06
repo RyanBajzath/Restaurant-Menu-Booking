@@ -7,7 +7,7 @@ function DrinkPage() {
   const [loading, setLoading] = useState(`loading`);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/foodMenu/drink`)
+    fetch(`${import.meta.env.VITE_API_URL}/foodMenu/drink`)
       .then((res) => res.json())
       .then((data) => {
         setFoodData(data.data.themeList);

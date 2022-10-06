@@ -7,7 +7,7 @@ const FoodPage = () => {
   const [loading, setLoading] = useState(`loading`);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/foodMenu/food`)
+    fetch(`${import.meta.env.VITE_API_URL}/foodMenu/food`)
       .then((res) => res.json())
       .then((data) => {
         setFoodData(data.data.themeList);

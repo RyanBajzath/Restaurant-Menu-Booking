@@ -22,7 +22,6 @@ const FrontPageDiv = styled.div`
   min-height: 100vh;
   background-color: #fff0f0;
   flex-direction: column;
-  gap: 3vh;
 `;
 
 const StyledImg = styled.img`
