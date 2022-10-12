@@ -1,6 +1,7 @@
 const express = require("express");
 const { ConnectionCheckOutFailedEvent } = require("mongodb");
 const app = express();
+const path = require("path");
 port = process.env.PORT | 8000;
 
 const cors = require("cors");
@@ -19,6 +20,9 @@ const {
 
 // app
 app.use(express.json());
+// allow access to all content in public dir via "/"
+app.use(express.static("public"));
+
 //endpoints
 app.get(`/menu`, getAllMenueOptions);
 app.get(`/foodMenu/:theme`, getMenueByTheme);
