@@ -30,24 +30,3 @@ app.post(`/appointments`, createAppointment);
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
-
-//Database shape can look like this;
-//Collection called menu, inside the menu collection there can be theme objects.
-//Inside those theme objects can be arrays of the items based on theme.
-
-/*
-
-menu collection
-{
-  theme: drinks
-  themeList:[drink1,drink2,drink3]
-},
-{
-  theme:food
-  themeList:[food1, food2, food3]},
-{
-  theme:dessert
-  themeList:[dessert1, dessert2, dessert3]}
-
-
-*/
