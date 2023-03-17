@@ -1,0 +1,21 @@
+{
+  "name": "restaurant-menu-booking",
+  "version": "1.0.0",
+  "description": "The goal of this Project is for the client too see a Menu and Book and appointment from a fiictional restaurant. I will Start with a Mobile version. This is also practice for GitCommands.",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "cd client && npm install && npm run build",
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm install && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyanBajzath/Restaurant-Menu-Booking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyanBajzath/Restaurant-Menu-Booking/issues"
+  },
+  "homepage": "https://github.com/RyanBajzath/Restaurant-Menu-Booking#readme"
+}
